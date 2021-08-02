@@ -1,0 +1,36 @@
+form {
+  margin-top: 50px;
+}
+
+.form-control {
+  width: 400px;
+  height: 60px;
+  margin: auto;
+  background: inherit;
+  background-color: transparent;
+  color: #c25bc2;
+
+  border: 2px solid transparent;
+  -o-border-image: -o-linear-gradient(
+    top left,
+    #ebd546 0%,
+    #99174d 53%,
+    #c25bc2 100%
+  );
+  border-image: -webkit-gradient(linear, left top, right bottom, from(#ebd546), to(#c25bc2));
+  border-image: linear-gradient(to bottom right, #ebd546 0%, #c25bc2 100%);
+
+  border-image-slice: 1;
+}
+
+.form-control:focus {
+  background-color: transparent;
+  color: #c25bc2;
+  border: 2px solid #ebd546 0%, #99174d 53%, #c25bc2 100%;
+}
+
+.icon-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}

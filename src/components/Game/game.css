@@ -42,7 +42,9 @@
   text-align: center;
 }
 .game__info-steam-review {
-  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: 100;
 }
 
 .game__info-steam .button {
