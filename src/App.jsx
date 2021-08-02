@@ -6,16 +6,21 @@ import Footer from './components/Footer/Footer.jsx';
 import HeroImage from './components/HeroImage/HeroImage.jsx';
 import GameList from './components/GameList/GameList.jsx';
 import SearchBar from './components/SearchBar/SearchBar';
+import { Route, BrowserRouter as Router } from 'react-router-dom';
 
 const App = () => {
   return (
-    <div className="App">
-      <Header />
-      <HeroImage />
-      <SearchBar />
-      <GameList />
-      <Footer />
-    </div>
+    <Router>
+      <Route path="/">
+        <div className="App">
+          <Header />
+          <HeroImage />
+          <SearchBar />
+          <GameList />
+          <Footer />
+        </div>
+      </Route>
+    </Router>
   );
 };
 

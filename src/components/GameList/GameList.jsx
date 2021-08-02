@@ -8,7 +8,6 @@ const GameList = () => {
   useEffect(() => {
     (async () => {
       const response = await fetchGames();
-      console.log(response);
       setGameList(response);
     })();
   }, []);
