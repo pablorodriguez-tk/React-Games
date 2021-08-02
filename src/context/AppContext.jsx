@@ -5,6 +5,7 @@ const Provider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const [gameList, setGameList] = useState([]);
   const [gameFiltered, setGameFiltered] = useState([]);
+  const [totalPrice, setTotalPrice] = useState(0);
 
   const props = {
     cart,
@@ -13,6 +14,8 @@ const Provider = ({ children }) => {
     setGameList,
     gameFiltered,
     setGameFiltered,
+    totalPrice,
+    setTotalPrice,
   };
 
   return <AppContext.Provider value={props}>{children}</AppContext.Provider>;

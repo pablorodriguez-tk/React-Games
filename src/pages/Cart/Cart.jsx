@@ -1,10 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useAppContext } from '../../context/AppContext';
 import './cart.css';
 
 const Cart = () => {
-  const { cart } = useAppContext();
+  const { cart, setTotalPrice, totalPrice } = useAppContext();
+
+  useEffect(() => {
+    const getTotalPrice = () => {
+      let price = 0;
+      // eslint-disable-next-line array-callback-return
+      cart.map((product) => {
+        if (product.isOnSale === '1') {
+          price += Number(product.salePrice);
+        } else {
+          price += Number(product.normalPrice);
+        }
+        setTotalPrice(price);
+      });
+    };
+    getTotalPrice();
+  }, [setTotalPrice, cart]);
 
   return (
     <div className="cart_section">
@@ -57,7 +73,7 @@ const Cart = () => {
               <div className="order_total">
                 <div className="order_total_content text-md-right">
                   <div className="order_total_title">Order Total:</div>
-                  <div className="order_total_amount">$</div>
+                  <div className="order_total_amount">${totalPrice}</div>
                 </div>
               </div>
 
