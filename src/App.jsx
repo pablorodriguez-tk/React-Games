@@ -11,6 +11,7 @@ import Cart from './pages/Cart/Cart';
 import { useAppContext } from './context/AppContext';
 import { useEffect } from 'react';
 import { fetchGames } from './api/fetchGames';
+import Browse from './pages/browse/Browse';
 
 const App = () => {
   const { setGameList } = useAppContext();
@@ -27,6 +28,7 @@ const App = () => {
       <Switch>
         <Route exact path="/" component={Home}></Route>
         <Route path="/cart" component={Cart}></Route>
+        <Route path="/search" component={Browse}></Route>
       </Switch>
       <Footer />
     </Router>
