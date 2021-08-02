@@ -1,28 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../../assets/LogoMS.jpg';
+import './header.css';
 
 const Header = () => {
   return (
-    <div>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">
-              <img src={Logo} alt="MS Logo" />
-            </Link>
-          </li>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/search">Browse</Link>
-          </li>
-          <li>
-            <Link to="/cart">Cart</Link>
-          </li>
-        </ul>
-      </nav>
+    <div className="header">
+      <div className="header__logo">
+        <Link to="/">
+          <img src={Logo} alt="MS Logo" />
+        </Link>
+      </div>
+      <div className="header__links">
+        <Link to="/">Home</Link>
+        <Link to="/search">Browse</Link>
+        <Link to="/cart">Cart</Link>
+      </div>
     </div>
   );
 };

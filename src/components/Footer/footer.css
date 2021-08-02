@@ -1,0 +1,35 @@
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #1a1a1a;
+  height: 150px;
+}
+
+.footer__logo {
+  margin-left: 100px;
+}
+
+.footer__logo img {
+  height: 80px;
+}
+.footer__links {
+  margin-right: 300px;
+  font-size: 12px;
+}
+.footer__links a {
+  color: white;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.footer__links :not(:last-child)::after {
+  margin-left: 10px;
+  content: '| ';
+}

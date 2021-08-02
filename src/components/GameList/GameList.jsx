@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { fetchGames } from '../../api/fetchGames';
 import Game from '../Game/Game';
+import './gamelist.css';
 
 const GameList = () => {
   const [gameList, setGameList] = useState([]);
@@ -13,7 +14,7 @@ const GameList = () => {
   }, []);
 
   return (
-    <div>
+    <div className="gamelist">
       {gameList.map((game, i) => (
         <Game game={game} key={game.gameID} />
       ))}

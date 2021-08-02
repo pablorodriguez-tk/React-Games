@@ -1,0 +1,27 @@
+.game {
+  width: 400px;
+}
+
+.game__image img {
+  width: 200px;
+  position: absolute;
+}
+
+.game__image .game__image-savings {
+  position: relative;
+}
+
+.game__info {
+  margin-top: 80px;
+}
+
+.game__info-title {
+  font-weight: 900;
+}
+
+.game__info-steam {
+  margin: 30px;
+}
+button :first-child {
+  text-decoration: line-through;
+}
