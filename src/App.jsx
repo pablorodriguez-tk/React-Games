@@ -8,8 +8,19 @@ import Footer from './components/Footer/Footer.jsx';
 // Pages
 import Home from './pages/Home/Home';
 import Cart from './pages/Cart/Cart';
+import { useAppContext } from './context/AppContext';
+import { useEffect } from 'react';
+import { fetchGames } from './api/fetchGames';
 
 const App = () => {
+  const { setGameList } = useAppContext();
+  useEffect(() => {
+    (async () => {
+      const response = await fetchGames();
+      setGameList(response);
+    })();
+  }, [setGameList]);
+
   return (
     <Router>
       <Header />

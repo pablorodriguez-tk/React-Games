@@ -1,10 +1,13 @@
 import React from 'react';
+import { useAppContext } from '../../context/AppContext';
 import { Rating } from '../Rating/Rating';
 import './game.css';
 
 const Game = ({ game }) => {
-  const addToCart = () => {};
-
+  const { setCart, cart } = useAppContext();
+  const addToCart = () => {
+    setCart([...cart, game]);
+  };
   return (
     <div className="game">
       <div className="game__image position-relative">
@@ -16,12 +19,13 @@ const Game = ({ game }) => {
       <div className="game__info">
         <div className="game__info-title">{game.title}</div>
         <div className="game__info-steam">
-          <div>Steam Review</div>
+          <div className="game__info-steam-review">Steam Review</div>
           <Rating game={game} />
-          <div>{game.steamRatingPercent}</div>
-          <div className="button btn btn-primary" onClick={addToCart}>
-            <div>${game.normalPrice}</div>
-            <div>${game.salePrice}</div>
+          <div className="game__button-position">
+            <div className="button btn btn-primary" onClick={addToCart}>
+              <div>${game.normalPrice}</div>
+              <div>${game.salePrice}</div>
+            </div>
           </div>
         </div>
       </div>
