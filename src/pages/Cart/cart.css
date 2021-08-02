@@ -64,6 +64,7 @@ ul {
 
 .cart_item_image img {
   max-width: 100%;
+  margin-top: 50px;
 }
 
 .cart_item_info {

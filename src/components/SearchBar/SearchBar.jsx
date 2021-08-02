@@ -5,7 +5,7 @@ import useForm from '../../hooks/useForm';
 import './searchBar.css';
 
 const SearchBar = () => {
-  const [formValues, handleInputChange] = useForm({ searchText: '' });
+  const [formValues, handleInputChange, reset] = useForm({ searchText: '' });
   const { gameList, setGameFiltered } = useAppContext();
   const { searchText } = formValues;
 
@@ -16,6 +16,7 @@ const SearchBar = () => {
   };
   const handleClearFilter = () => {
     setGameFiltered([]);
+    reset();
   };
 
   return (
@@ -34,7 +35,7 @@ const SearchBar = () => {
           />
           <button
             type="button"
-            class="btn btn-info"
+            className="btn btn-info"
             onClick={handleClearFilter}
           >
             Clear Filter
