@@ -1,5 +1,6 @@
 form {
   margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .form-control {
@@ -33,4 +34,12 @@ form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.icon-input button {
+  background-color: #c25bc2;
+}
+
+.icon-input button:hover {
+  background-color: #703470;
 }

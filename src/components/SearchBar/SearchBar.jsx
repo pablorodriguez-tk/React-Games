@@ -1,17 +1,22 @@
 import React from 'react';
 import { useAppContext } from '../../context/AppContext';
+import getGamesByName from '../../helper/getGamesByName';
 import useForm from '../../hooks/useForm';
 import Game from '../Game/Game';
 import './searchBar.css';
 
 const SearchBar = () => {
   const [formValues, handleInputChange] = useForm({ searchText: '' });
-  const { gameList } = useAppContext();
+  const { gameList, setGameFiltered } = useAppContext();
   const { searchText } = formValues;
 
   const handleSearch = (e) => {
     e.preventDefault();
-    console.log(searchText);
+    const gameFiltered = getGamesByName(searchText, gameList);
+    setGameFiltered(gameFiltered);
+  };
+  const handleClearFilter = () => {
+    setGameFiltered([]);
   };
 
   return (
@@ -28,6 +33,13 @@ const SearchBar = () => {
             autoComplete="off"
             aria-describedby="addon-wrapping"
           />
+          <button
+            type="button"
+            class="btn btn-info"
+            onClick={handleClearFilter}
+          >
+            Clear Filter
+          </button>
         </div>
       </form>
     </div>

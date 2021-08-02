@@ -4,7 +4,20 @@ import Game from '../Game/Game';
 import './gamelist.css';
 
 const GameList = () => {
-  const { gameList } = useAppContext();
+  const { gameList, gameFiltered } = useAppContext();
+
+  if (gameFiltered.length !== 0) {
+    return (
+      <>
+        <div className="gamelist">
+          {gameFiltered.map((game, i) => (
+            <Game game={game} key={game.gameID} />
+          ))}
+        </div>
+      </>
+    );
+  }
+
   return (
     <div className="gamelist">
       {gameList.map((game, i) => (
