@@ -2,7 +2,6 @@ import React from 'react';
 import { useAppContext } from '../../context/AppContext';
 import getGamesByName from '../../helper/getGamesByName';
 import useForm from '../../hooks/useForm';
-import Game from '../Game/Game';
 import './searchBar.css';
 
 const SearchBar = () => {
